@@ -143,5 +143,12 @@ async function getRandomCharacterInfo () {
 
 // 9 - Pinta los anteriores datos en el DOM (no se testea)
 async function pintarEnDom () {
-    
+    let data = await getRandomCharacterInfo();
+    document.querySelector('body').innerHTML +=
+                                    `<section>
+                                        <h1>${data.name}</h1>
+                                        <img src="${data.img}" alt="Rick Sanchez">
+                                        <h3>Episodes: ${data.episodes}</h3>
+                                        <h3>First episode: ${data.fir}</h3>
+                                        <h4>First episode: ${data.dateEpisode}</h4>`
 }
